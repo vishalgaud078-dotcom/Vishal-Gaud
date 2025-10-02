@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="second.css">
+</head>
+<form action="http://127.0.0.1:5500/index.html">
+
+    <body>
+        <div class="main">
+            <input type="text" name="name" maxlength="10" placeholder="Name" id="n1" size="30"><br><br>
+            <input type="text" name="Father name" maxlength="10" placeholder="Father Name" id="n2" size="30"><br><br>
+            <input type="password" name="password" maxlength="10" placeholder="password" id="n3" size="30"><br><br>
+            <input type="password" name="Conform password" maxlength="10" placeholder="Conform password" id="n4"
+                size="30"><br><br>
+        </div>
+        <div class="btn">
+            <button onclick="return ram()">Submit</button>
+        </div>
+        <div class="sel">
+            <select onchange="change(this)">
+                <option value="black">black</option>
+                <option value="pink">Pink</option>
+                <option value="yellow">Yellow</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+            </select>
+            <div class="bounce">
+                <span>V</span>
+                <span>L</span>
+                <span>I</span>
+                <span>D</span>
+                <span>A</span>
+                <span>T</span>
+                <span>I</span>
+                <span>O</span>
+                <span>N</span>
+                <span></span>
+                
+                <span>F</span>
+                <span>O</span>
+                <span>R</span>
+                <span>M</span>
+            </div>
+        </div>
+        <script>
+            function ram() {
+                let a = document.getElementById("n1").value;
+                let b = document.getElementById("n2").value;
+                let c = document.getElementById("n3").value;
+                let d = document.getElementById("n4").value;
+                if (a == "" || b == "" || c == "" || d == "") {
+                    alert("All fill mandatory");
+                    return false
+                }
+                else if (c !== d) {
+                    alert("Dose not match password", c, d);
+                    return false;
+                }
+                else {
+                    true;
+                }
+            }
+            function change(color){
+                document.getElementsByTagName("body")[0].style.backgroundColor=color.value;
+            }
+            
+        </script>
+    </body>
+</form>
+
+</html>
